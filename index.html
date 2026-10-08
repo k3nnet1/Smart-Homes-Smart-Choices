@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Homes, Smart Choices</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f7f1;
+    color: #24352a;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+section {
+    padding: 75px 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    color: #245637;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 45px;
+    color: #5b685e;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    background: #1f4d31;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.18);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 560px;
+
+    background:
+        linear-gradient(
+            rgba(24,67,39,0.76),
+            rgba(24,67,39,0.76)
+        ),
+        url("family.avif");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin: 0 0 18px;
+}
+
+.hero p {
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 26px;
+    background: white;
+    color: #1f4d31;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #2d6941;
+    margin-top: 0;
+}
+
+
+/* =========================
+   HOUSEHOLD ANALYSIS
+========================= */
+
+.household {
+    background: #dfefdf;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.large-image {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.highlight {
+    background: #edf6ed;
+    border-left: 5px solid #2d6941;
+    padding: 17px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   NEEDS AND WANTS
+========================= */
+
+.needs-wants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.needs-wants .card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.needs-card {
+    border-top: 6px solid #327346;
+}
+
+.wants-card {
+    border-top: 6px solid #aa8240;
+}
+
+ul {
+    padding-left: 22px;
+}
+
+
+/* =========================
+   ECONOMIC CONCEPTS
+========================= */
+
+.concepts {
+    background: #f8fbf7;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.concept {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.concept h3 {
+    color: #28633c;
+}
+
+
+/* =========================
+   BUDGET
+========================= */
+
+.budget-section {
+    background: #dfefdf;
+}
+
+.budget-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.budget-table th {
+    background: #245637;
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+.budget-table td {
+    padding: 13px;
+    border-bottom: 1px solid #ddd;
+}
+
+.budget-table tr:last-child {
+    font-weight: bold;
+    background: #edf6ed;
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator {
+    margin-top: 35px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.calculate-button {
+    background: #245637;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.calculate-button:hover {
+    background: #173d26;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 15px;
+    background: #edf6ed;
+    border-radius: 8px;
+}
+
+
+/* =========================
+   SUPPLY AND DEMAND
+========================= */
+
+.economics {
+    background: #f8fbf7;
+}
+
+.supply-image {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: contain;
+    margin: 0 auto 35px;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.economic-explanation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.economic-box {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.economic-box h3 {
+    color: #2b663e;
+}
+
+
+/* =========================
+   ACTION PLAN
+========================= */
+
+.action {
+    background: #dfefdf;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.step {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.step img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.step-content {
+    padding: 23px;
+}
+
+.step-number {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    background: #245637;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+/* =========================
+   RESPONSIBLE SPENDING
+========================= */
+
+.responsible {
+    background: #f8fbf7;
+}
+
+.responsible-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+}
+
+.responsible-image {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.tips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.tip {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+.tip h3 {
+    color: #2b663e;
+    font-size: 18px;
+}
+
+
+/* =========================
+   SUSTAINABILITY
+========================= */
+
+.sustainability {
+    background: #dfefdf;
+}
+
+.sustainability-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.sustainability-image {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.sustainability-list li {
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.conclusion {
+    background: #1f4d31;
+    color: white;
+    text-align: center;
+}
+
+.conclusion h2 {
+    color: white;
+}
+
+.conclusion p {
+    max-width: 800px;
+    margin: auto;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #153922;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 18px 0;
+        gap: 12px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .two-column,
+    .needs-wants,
+    .economic-explanation,
+    .responsible-grid,
+    .sustainability-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .concept-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .tips {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 0;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+Smart Homes, Smart Choices
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#household">Household</a>
+<a href="#budget">Budget</a>
+<a href="#economics">Economics</a>
+<a href="#action">Action Plan</a>
+<a href="#responsible">Smart Choices</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Smart Homes, Smart Choices</h1>
+
+<p>
+Understanding household economics helps families make responsible decisions,
+manage limited resources, and prepare for the future.
+</p>
+
+<a href="#household" class="button">
+Explore the Project
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HOUSEHOLD ANALYSIS
+========================= -->
+
+<section class="household" id="household">
+
+<div class="container">
+
+<h2>Household Economic Analysis</h2>
+
+<p class="section-intro">
+A household faces limited resources and must decide how to use money,
+time, and other resources to satisfy important needs and wants.
+</p>
+
+
+<div class="two-column">
+
+<div>
+
+<img src="family.avif"
+     alt="Family and household"
+     class="large-image">
+
+</div>
+
+
+<div class="card">
+
+<h3>Why Household Economics Matters</h3>
+
+<p>
+Household economics involves making decisions about how available
+resources should be used. Since resources are limited, families must
+set priorities and make choices.
+</p>
+
+<p>
+A responsible household considers its income, necessary expenses,
+savings, and future goals before making spending decisions.
+</p>
+
+<div class="highlight">
+
+<strong>Economic Problem:</strong>
+
+<p>
+People have many needs and wants, but resources are limited.
+Because of this scarcity, households must make choices and consider
+the opportunity cost of their decisions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NEEDS AND WANTS
+========================= -->
+
+<section>
+
+<div class="container">
+
+<h2>Needs and Wants</h2>
+
+<p class="section-intro">
+One important part of responsible household management is knowing
+which expenses are necessary and which can be postponed or avoided.
+</p>
+
+
+<div class="needs-wants">
+
+
+<div class="card needs-card">
+
+<img src="needs.avif"
+     alt="Needs and household necessities"
+     class="card-image">
+
+<div class="card-content">
+
+<h3>Needs</h3>
+
+<p>
+Needs are goods and services that are important for basic living,
+health, safety, and education.
+</p>
+
+<ul>
+<li>Food and water</li>
+<li>Housing</li>
+<li>Education</li>
+<li>Healthcare</li>
+<li>Electricity and water</li>
+<li>Essential transportation</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="card wants-card">
+
+<img src="shopping.avif"
+     alt="Shopping and wants"
+     class="card-image">
+
+<div class="card-content">
+
+<h3>Wants</h3>
+
+<p>
+Wants are goods and services that improve comfort or enjoyment but
+are not essential for basic living.
+</p>
+
+<ul>
+<li>Entertainment</li>
+<li>Non-essential shopping</li>
+<li>Luxury products</li>
+<li>Expensive hobbies</li>
+<li>Unnecessary upgrades</li>
+<li>Impulse purchases</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ECONOMIC PRINCIPLES
+========================= -->
+
+<section class="concepts">
+
+<div class="container">
+
+<h2>Important Economic Ideas</h2>
+
+<p class="section-intro">
+Understanding these concepts helps a household make more informed
+and responsible economic decisions.
+</p>
+
+
+<div class="concept-grid">
+
+
+<div class="concept">
+
+<h3>Scarcity</h3>
+
+<p>
+Resources such as money, time, and materials are limited, while
+human wants are numerous. This creates the need to make choices.
+</p>
+
+</div>
+
+
+<div class="concept">
+
+<h3>Opportunity Cost</h3>
+
+<p>
+When a household chooses one option, it gives up the next best
+alternative. This sacrificed alternative is the opportunity cost.
+</p>
+
+</div>
+
+
+<div class="concept">
+
+<h3>Prioritization</h3>
+
+<p>
+Families can improve financial decisions by paying for essential
+needs first, saving when possible, and controlling unnecessary
+spending.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     BUDGET PLAN
+========================= -->
+
+<section class="budget-section" id="budget">
+
+<div class="container">
+
+<h2>Household Budget Plan</h2>
+
+<p class="section-intro">
+A budget organizes income and expenses so that a household can
+meet its needs while also preparing for future financial goals.
+</p>
+
+
+<div class="two-column">
+
+<div>
+
+<img src="budget.avif"
+     alt="Budget planning"
+     class="budget-image">
+
+</div>
+
+
+<div>
+
+<table class="budget-table">
+
+<tr>
+<th>Category</th>
+<th>Monthly Amount</th>
+</tr>
+
+<tr>
+<td>Food and Groceries</td>
+<td>₱10,000</td>
+</tr>
+
+<tr>
+<td>Utilities</td>
+<td>₱5,000</td>
+</tr>
+
+<tr>
+<td>Education</td>
+<td>₱4,000</td>
+</tr>
+
+<tr>
+<td>Transportation</td>
+<td>₱4,500</td>
+</tr>
+
+<tr>
+<td>Other Essential Needs</td>
+<td>₱4,000</td>
+</tr>
+
+<tr>
+<td>Savings</td>
+<td>₱7,500</td>
+</tr>
+
+<tr>
+<td>Total Planned Amount</td>
+<td>₱35,000</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<div class="highlight">
+
+<strong>Budget Reasoning:</strong>
+
+<p>
+The budget prioritizes essential household expenses while setting
+aside money for savings. The exact amounts should be adjusted based
+on the household's actual income and needs.
+</p>
+
+</div>
+
+
+<!-- CALCULATOR -->
+
+<div class="calculator">
+
+<h3>Interactive Budget Calculator</h3>
+
+<p>
+Enter the household's monthly income and expenses to calculate
+the amount remaining after planned spending.
+</p>
+
+
+<div class="input-group">
+
+<label for="income">
+Monthly Income
+</label>
+
+<input
+type="number"
+id="income"
+placeholder="Example: 45000">
+
+</div>
+
+
+<div class="input-group">
+
+<label for="expenses">
+Monthly Expenses
+</label>
+
+<input
+type="number"
+id="expenses"
+placeholder="Example: 32500">
+
+</div>
+
+
+<button
+class="calculate-button"
+onclick="calculateBudget()">
+
+Calculate Remaining Money
+
+</button>
+
+
+<div id="result">
+Your result will appear here.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DEMAND AND SUPPLY
+========================= -->
+
+<section class="economics" id="economics">
+
+<div class="container">
+
+<h2>Demand and Supply</h2>
+
+<p class="section-intro">
+Demand and supply influence the price and availability of goods
+and services in a market.
+</p>
+
+
+<img src="supply.png"
+     alt="Supply and demand graph"
+     class="supply-image">
+
+
+<div class="economic-explanation">
+
+
+<div class="economic-box">
+
+<h3>Demand</h3>
+
+<p>
+Demand refers to the quantity of a good or service that consumers
+are willing and able to buy at different prices.
+</p>
+
+<p>
+Generally, when price increases, quantity demanded decreases.
+When price decreases, quantity demanded tends to increase.
+</p>
+
+</div>
+
+
+<div class="economic-box">
+
+<h3>Supply</h3>
+
+<p>
+Supply refers to the quantity of a good or service that producers
+are willing and able to offer for sale at different prices.
+</p>
+
+<p>
+Generally, when price increases, producers have a greater incentive
+to supply goods. When price decreases, quantity supplied tends to
+decrease.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="card">
+
+<h3>How This Affects Households</h3>
+
+<p>
+Changes in supply and demand can affect the prices of products
+families purchase. For example, if a product becomes scarce while
+many consumers still want it, its price may increase.
+</p>
+
+<p>
+A household can respond by comparing prices, considering alternatives,
+buying only what is necessary, and adjusting its budget when prices
+change.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ACTION PLAN
+========================= -->
+
+<section class="action" id="action">
+
+<div class="container">
+
+<h2>Household Economic Action Plan</h2>
+
+<p class="section-intro">
+The following actions can help a household improve its financial
+management and make more responsible economic choices.
+</p>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<img src="planning.avif"
+     alt="Planning">
+
+<div class="step-content">
+
+<span class="step-number">1</span>
+
+<h3>Create a Monthly Budget</h3>
+
+<p>
+Record household income and expected expenses before spending.
+Separate essential needs from wants and allocate money accordingly.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<img src="shopping.avif"
+     alt="Responsible shopping">
+
+<div class="step-content">
+
+<span class="step-number">2</span>
+
+<h3>Control Unnecessary Spending</h3>
+
+<p>
+Compare prices, avoid impulse purchases, and think about whether
+a purchase is a need or a want before spending.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="step">
+
+<img src="sustainability.avif"
+     alt="Sustainable household">
+
+<div class="step-content">
+
+<span class="step-number">3</span>
+
+<h3>Use Resources Wisely</h3>
+
+<p>
+Reduce unnecessary electricity and water use, avoid waste, and
+choose practical products that can provide long-term value.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESPONSIBLE SPENDING
+========================= -->
+
+<section class="responsible" id="responsible">
+
+<div class="container">
+
+<h2>Responsible Spending</h2>
+
+<p class="section-intro">
+Responsible spending means making choices that satisfy important
+needs while protecting the household's financial future.
+</p>
+
+
+<div class="responsible-grid">
+
+
+<div>
+
+<img src="shopping.avif"
+     alt="Responsible shopping"
+     class="responsible-image">
+
+</div>
+
+
+<div>
+
+<div class="tips">
+
+
+<div class="tip">
+
+<h3>Compare Prices</h3>
+
+<p>
+Check different options before purchasing and choose good value
+instead of automatically choosing the most expensive product.
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>Make a Shopping List</h3>
+
+<p>
+Planning purchases can reduce impulse buying and help households
+stay within their budget.
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>Prioritize Needs</h3>
+
+<p>
+Essential expenses should generally be handled before optional
+purchases.
+</p>
+
+</div>
+
+
+<div class="tip">
+
+<h3>Save Regularly</h3>
+
+<p>
+Setting aside part of available income can help prepare for
+future needs and unexpected expenses.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SUSTAINABILITY
+========================= -->
+
+<section class="sustainability">
+
+<div class="container">
+
+<h2>Sustainable Household Choices</h2>
+
+<p class="section-intro">
+Economic responsibility also involves using household resources
+efficiently and reducing unnecessary waste.
+</p>
+
+
+<div class="sustainability-layout">
+
+
+<div>
+
+<img src="sustainability.avif"
+     alt="Sustainable living"
+     class="sustainability-image">
+
+</div>
+
+
+<div class="card">
+
+<h3>Simple Actions for a Smarter Home</h3>
+
+<ul class="sustainability-list">
+
+<li>Turn off lights and appliances when they are not needed.</li>
+
+<li>Use water carefully and avoid unnecessary waste.</li>
+
+<li>Reuse items whenever practical.</li>
+
+<li>Plan meals to reduce food waste.</li>
+
+<li>Choose durable products instead of frequently replacing items.</li>
+
+<li>Practice proper waste segregation and recycling.</li>
+
+</ul>
+
+<p>
+These choices can reduce waste while potentially lowering household
+expenses over time.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONCLUSION
+========================= -->
+
+<section class="conclusion">
+
+<div class="container">
+
+<h2>Making Smart Choices</h2>
+
+<p>
+A smart household does not simply spend less. It makes informed
+choices about how limited resources should be used. By prioritizing
+needs, planning a budget, understanding demand and supply, saving
+money, and using resources responsibly, families can improve both
+their present situation and their future financial security.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+Smart Homes, Smart Choices
+</p>
+
+<p>
+Household Economics &nbsp; | &nbsp; Responsible Decision-Making
+</p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function calculateBudget() {
+
+    var income =
+        Number(document.getElementById("income").value);
+
+    var expenses =
+        Number(document.getElementById("expenses").value);
+
+    var result =
+        document.getElementById("result");
+
+
+    if (income <= 0 || expenses < 0) {
+
+        result.innerHTML =
+            "Please enter valid amounts.";
+
+        return;
+    }
+
+
+    var remaining = income - expenses;
+
+
+    if (remaining > 0) {
+
+        result.innerHTML =
+            "Remaining money: ₱" +
+            remaining.toLocaleString() +
+            "<br><br>" +
+            "The household has money remaining after its planned expenses.";
+
+    } else if (remaining === 0) {
+
+        result.innerHTML =
+            "Remaining money: ₱0" +
+            "<br><br>" +
+            "The household's income exactly matches its planned expenses.";
+
+    } else {
+
+        result.innerHTML =
+            "Budget deficit: ₱" +
+            Math.abs(remaining).toLocaleString() +
+            "<br><br>" +
+            "Planned expenses are higher than the household's income. " +
+            "The budget should be adjusted.";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
